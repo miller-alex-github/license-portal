@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
     <meta name="Description" content="ZENNER, Licensing Service Center">
-    <title>Licensing Service Center</title>
+    <title>ZENNER IoT</title>
     <link rel="icon" href="~/images/icon.png">
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -63,8 +63,8 @@
 </g>
 </svg>
                     </a>
-                    <div class="col text-left tag-text">
-                        Licensing Service Center
+                    <div class="col text-left tag-text ml-5">
+                        All that counts.
                     </div>
                 </div>
             </div>
@@ -80,7 +80,8 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse text-right" id="navbarNav">
-                    <ul class="navbar-nav mr-auto">                       
+                    <ul class="navbar-nav mr-auto">
+                        @*<li class="nav-item"><a class="nav-link text-white" asp-area="" asp-controller="Software" asp-action="Index">SOFTWARE</a></li>*@
                         @if (User.IsInRole("Admin"))
                         {
                             <li class="nav-item"><a class="nav-link text-white" asp-area="" asp-controller="Admin" asp-action="Index">ADMIN</a></li>

@@ -350,3 +350,5 @@ MigrationBackup/
 .ionide/
 /src/License.Portal/License.Portal.Web/appsettings.production.json
 /src/License.Portal/License.Portal.Web/appsettings.Development.json
+/src/License.Portal/License.Portal.Web/key-0d3a9d57-f7de-49ab-a0ec-f3131e3623af.xml
+/src/License.Portal/License.Portal.Web/key-0d3a9d57-f7de-49ab-a0ec-f3131e3623af.xml
