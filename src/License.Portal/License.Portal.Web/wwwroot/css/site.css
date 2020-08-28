@@ -1,37 +1,260 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
 body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    color: #393939;
+}
+
+h3 {
+    font-size: 28px;
+}
+
+h2, h3 {
+    font-weight: 400;
+    color: #0c3c76;
+}
+
+.tag-text {
+    position: absolute center;
+    top: -3px;
+    bottom: 0;
+    font-family: Lato, Helvetica;
+    font-style: italic;
+    font-size: 20px;
+    color: #152f4f;
+    text-decoration: none !important;
+    cursor: default;
 }
 
 /* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
+/* Logo of the web site*/
+img.logo {
+    width: 400px;
+    height: 140px;
+    margin: 8px;
 }
 
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
-    width: 100%;
+.navbar-custom {
+    background-color: #152f4f;
+    border-top: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+    margin-bottom: 0px;
+    border-radius: 0;
+    font-family: Lato, Helvetica;
+    font-size: large;
+    font-weight: bold;
 }
 
-/* QR code generator */
-#qrCode {
-    margin: 15px;
+.banner-small {
+    display: none;
 }
 
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-    /* Hide captions */
+.carousel-caption {
+    top: 3%;
+    left: 3%;
+    text-align: left;
+    max-width: 440px;
+    right: auto;
+    vertical-align: top !important;
+}
+
+    .carousel-caption button {
+        text-align: center;
+        background: linear-gradient(to right, #C0B283 50%,#DCD0C0 50%);
+        background-size: 200% 100%;
+        transition: all 1s ease;
+    }
+
+        .carousel-caption button:hover {
+            background-position: right bottom;
+        }
+
+    /* Carousel */
+    .carousel-caption p {
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+.carousel-control-prev,
+.carousel-control-next {
+    top: 70%;
+    width: 3%
+}
+
+@media screen and (max-width: 1200px) {
+    .carousel-caption {
+        top: 3%;
+        left: 3%;
+        text-align: left;
+        max-width: 360px;
+        right: auto;
+        vertical-align: top !important;
+    }
+
+        .carousel-caption p {
+            font-size: 16px;
+        }
+}
+
+@media screen and (max-width: 1000px) {
+    .carousel-caption {
+        top: 3%;
+        left: 3%;
+        text-align: left;
+        max-width: 270px;
+        right: auto;
+        vertical-align: top !important;
+    }
+
+        .carousel-caption p {
+            font-size: 12px;
+        }
+}
+
+@media screen and (max-width: 800px) {
+    .carousel {
+        display: none;
+    }
+
+    .banner-small {
+        display: block;
+        width: 100%;
+    }
+
     .carousel-caption {
         display: none;
     }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        display: none;
+    }
+}
+
+.thead-inverse th {
+    color: #fff;
+    background-color: #8A8E92;
+}
+
+.footer {
+    background: #152f4f;
+    color: white;
+}
+
+    .footer .links ul {
+        list-style-type: none;
+    }
+
+    .footer .links li a {
+        color: white;
+        -webkit-transition: color 0.2s;
+        transition: color 0.2s;
+    }
+
+        .footer .links li a:hover {
+            text-decoration: none;
+            color: #4180cb;
+        }
+
+    .footer .about-company i {
+        font-size: 25px;
+    }
+
+    .footer .about-company a {
+        color: white;
+        -webkit-transition: color 0.2s;
+        transition: color 0.2s;
+    }
+
+        .footer .about-company a:hover {
+            color: #4180cb;
+        }
+
+    .footer .location i {
+        font-size: 18px;
+    }
+
+    .footer .copyright p {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+#cookieConsent {
+    font-size: 12pt;
+    margin: 0 auto;
+    padding: 12px 10px;
+    position: absolute;
+    text-align: center;
+    box-sizing: border-box;
+    width: 100%;
+    z-index: 9999;
+    box-shadow: rgba(0,0,0,.5) 0px 5px 50px;
+    left: 0px;
+    font-weight: 300;
+}
+
+.fit-image {
+    width: 100%;
+    object-fit: cover;
+    background-image: url('../images/banner_bg.png');
+    background-size: 100%;
+}
+
+#abilities ul > li {
+    min-height: 30px;
+    padding: 2px 0px;
+}
+
+    #abilities ul > li .ability-title {
+        display: inline-block;
+        width: 60%;
+    }
+
+    #abilities ul > li .ability-score {
+        float: right;
+    }
+
+        #abilities ul > li .ability-score .glyphicon.filled {
+            color: rgba(12, 60, 118, 0.85);
+        }
+
+        #abilities ul > li .ability-score .glyphicon {
+            color: #DFE0E0;
+            font-size: 14px;
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            -o-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+
+ul.no-bullets {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+ul li:hover {
+    background: rgba(12, 60, 118, 0.10);
+}
+
+    ul li:hover ul {
+        display: block;
+    }
+
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.glyphicon-star:before {
+    content: "\e113"; /*  130, 115, 144, 141 */
 }

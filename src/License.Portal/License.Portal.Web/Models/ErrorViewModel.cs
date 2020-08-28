@@ -1,5 +1,3 @@
-using System;
-
 namespace License.Portal.Web.Models
 {
     public class ErrorViewModel
