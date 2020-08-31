@@ -5,8 +5,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-    <meta name="Description" content="ZENNER, Licensing Service Center">
-    <title>ZENNER IoT</title>
+    <meta name="Description" content="Licensing Service Center">
+    <title>IOT PLATFORM</title>
     <link rel="icon" href="~/images/icon.png">
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -26,46 +26,17 @@
 <body>
     <div class="container">
         <header class="blog-header-logo">
-            <div class="row align-items-center">
-                <div class="col text-left">
+            <div class="row">
+                <div class="d-block">
                     <a href="/">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="130px" height="36px" viewBox="0 0 170.1 27.8" style="enable-background:new 0 0 170.1 27.8;" xml:space="preserve">
-<style type="text/css">
-    .st01 {
-        fill: #0580B7
-    }
-
-    .st11 {
-        clip-path: url(#SVGID_21_);
-        fill: #0580B7
-    }
-
-    .st21 {
-        clip-path: url(#SVGID_41_);
-        fill: #0580B7
-    }
-</style>
-<defs>
-</defs>
-<polygon class="st01" points="74.7,0 74.7,12.5 65.8,0 56.3,0 56.3,27.8 65,27.8 65,15.3 74.7,27.8 83.6,27.8 83.6,0 "></polygon>
-<polygon class="st01" points="30.8,0 30.8,27.8 52.7,27.8 52.7,21.4 39.8,21.4 39.8,16.9 52.7,16.9 52.7,10.7 39.8,10.7 39.8,6.3   52.7,6.3 52.7,0 "></polygon>
-<polygon class="st01" points="118.2,0 118.2,27.8 140.1,27.8 140.1,21.4 127.2,21.4 127.2,16.9 140.1,16.9 140.1,10.7 127.2,10.7   127.2,6.3 140.1,6.3 140.1,0 "></polygon>
-<polygon class="st01" points="105.7,0 105.6,12.5 96.7,0 87.3,0 87.3,27.8 96,27.8 96,15.3 105.6,27.8 114.5,27.8 114.5,0 "></polygon>
-<polygon class="st01" points="0,0 0,6.3 15.6,6.4 0,20.5 0,27.8 27.3,27.8 27.3,21.4 11.5,21.3 27.3,7.1 27.3,0 "></polygon>
-<g>
-<defs>
-<rect id="SVGID_11_" width="170.1" height="27.8"></rect>
-</defs>
-<clipPath id="SVGID_21_">
-<use xlink:href="#SVGID_11_" style="overflow:visible;"></use>
-</clipPath>
-<path class="st11" d="M160.8,10.1c0,2-1.6,3.6-3.5,3.8v0h-4.8V6.3h4.8v0C159.2,6.4,160.8,8.1,160.8,10.1 M168.6,10.1   c0-5.4-4.1-9.7-9.4-10.1h-15.3v27.8h8.6v-8.5l7.2,8.5h10.5l-7.2-8.5C166.2,17.6,168.6,14.2,168.6,10.1"></path>
-</g>
-</svg>
+                        <svg width="4em" height="4em" viewBox="0 0 16 16" class="bi bi-layers-fill" fill="#152f4f" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M7.765 1.559a.5.5 0 0 1 .47 0l7.5 4a.5.5 0 0 1 0 .882l-7.5 4a.5.5 0 0 1-.47 0l-7.5-4a.5.5 0 0 1 0-.882l7.5-4z" />
+                            <path fill-rule="evenodd" d="M2.125 8.567l-1.86.992a.5.5 0 0 0 0 .882l7.5 4a.5.5 0 0 0 .47 0l7.5-4a.5.5 0 0 0 0-.882l-1.86-.992-5.17 2.756a1.5 1.5 0 0 1-1.41 0l-5.17-2.756z" />
+                        </svg>
                     </a>
-                    <div class="col text-left tag-text ml-5">
-                        All that counts.
-                    </div>
+                </div>
+                <div class="row align-self-center pl-4">
+                    IOT PLATFORM
                 </div>
             </div>
         </header>
@@ -81,11 +52,14 @@
                 </button>
                 <div class="collapse navbar-collapse text-right" id="navbarNav">
                     <ul class="navbar-nav mr-auto">
-                        @*<li class="nav-item"><a class="nav-link text-white" asp-area="" asp-controller="Software" asp-action="Index">SOFTWARE</a></li>*@
-                        @if (User.IsInRole("Admin"))
+                        @if (User != null && User.Identity != null && User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item"><a class="nav-link text-white" asp-area="" asp-controller="License" asp-action="Index">LICENSE</a></li>
+                        }
+                        @*@if (User.IsInRole("Admin"))
                         {
                             <li class="nav-item"><a class="nav-link text-white" asp-area="" asp-controller="Admin" asp-action="Index">ADMIN</a></li>
-                        }
+                        }*@
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
@@ -94,7 +68,7 @@
     </div>
     <div class="container p-3">
         @RenderBody()
-    </div>    
+    </div>
     <partial name="_CookieConsentPartial" />
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>

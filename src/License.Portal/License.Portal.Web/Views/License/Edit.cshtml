@@ -1,0 +1,25 @@
+﻿@model LicenseDto
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+<form asp-controller="License" asp-action="Edit" method="post">
+    <div class="container pt-15">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Edit a license</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="HardwareKey"></label>
+                            <input asp-for="HardwareKey" type="text" class="form-control" autocomplete="off" />
+                            <span asp-validation-for="HardwareKey" class="text-danger"></span>
+                        </div>
+                    </div>                    
+                </div>
+                <span><button id="SubmitButton" type="submit" class="btn btn-default btn-primary">Save</button></span>
+                <span><a id="CancelButton" asp-action="Index" class="btn btn-default">Cancel</a></span>
+            </div>
+        </div>
+    </div>
+</form>

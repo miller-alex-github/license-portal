@@ -1,0 +1,44 @@
+﻿@model LicenseViewModel
+
+<div class="panel panel-default">
+    <table class="table table-hover">
+        <thead class="thead-inverse">
+            <tr>
+                <th>Name</th>
+                <th>Product</th>
+                <th>Package</th>
+                <th>Key</th>
+                <th>QR-code</th>
+                <th>Generated at</th>
+                <th>Registered at</th>
+                <th>Hardware key</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        @foreach (var license in Model.Licenses)
+        {
+            <tr>
+                <td>@license.Name</td>
+                <td>@license.Product</td>
+                <td>@license.Package</td>
+                <td>@license.Key</td>
+                <td>
+                    @if (license.QRCodeImage != null)
+                    {
+                        <img src="@license.QRCodeImage" alt="" height="200" width="200" />
+                    }
+                </td>
+                <td>@license.GeneratedAt.ToString(@"yyyy\/MM\/dd HH:mm")</td>
+                <td>@license.RegisteredAt?.ToString(@"yyyy\/MM\/dd HH:mm")</td>
+                <td>@license.HardwareKey</td>
+                <td><a asp-action="Edit" asp-route-id="@license.Id" class="btn btn-sm btn-primary">Edit</a></td>
+                <td><a asp-action="Delete" asp-route-id="@license.Id" class="btn btn-sm btn-danger">Delete</a></td>
+            </tr>
+        }
+    </table>
+    <div class="panel-footer clearfix">
+        <a asp-action="Add" class="btn btn-primary btn-sm pull-left">Add License</a>
+    </div>
+</div>
+

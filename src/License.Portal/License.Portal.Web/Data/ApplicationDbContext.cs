@@ -9,5 +9,7 @@ namespace License.Portal.Web
             : base(options)
         {
         }
+
+        public DbSet<LicenseDto> Licenses { get; set; }
     }
 }

@@ -26,7 +26,7 @@ namespace License.Portal.Web
         /// </summary>
         public static void AutoMigrateDatabase(this IApplicationBuilder app)
         {
-            return; // TODO: Use it if needed.
+            //return; // TODO: Use it if needed.
 
             using (var scope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
             {

@@ -1,0 +1,39 @@
+﻿@model LicenseDto
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+<form asp-controller="License" asp-action="Add" method="post">
+    <div class="container pt-15">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Create a license</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="Name"></label>
+                            <input asp-for="Name" type="text" class="form-control" autocomplete="off" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="Product"></label>
+                            <input asp-for="Product" type="text" class="form-control" autocomplete="off" />
+                            <span asp-validation-for="Product" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label asp-for="Package"></label>
+                            <input asp-for="Package" type="text" class="form-control" autocomplete="off" />
+                            <span asp-validation-for="Package" class="text-danger"></span>
+                        </div>
+                    </div>                                   
+                </div>
+                <span><button id="SubmitButton" type="submit" class="btn btn-default btn-primary">Add</button></span>
+                <span><a id="CancelButton" asp-action="Index" class="btn btn-default">Cancel</a></span>
+            </div>
+        </div>
+    </div>
+</form>
